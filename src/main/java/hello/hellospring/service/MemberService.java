@@ -8,7 +8,11 @@ import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
-    private final MemberRepository repository = new MemoryMemberRepository();
+    private final MemberRepository repository;
+
+    public MemberService(MemberRepository repository) {
+        this.repository = repository;
+    }
 
     /**
      * 회원 가입
