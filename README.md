@@ -65,6 +65,9 @@
     - JDBC
     - DataSource
 - 스프링 통합 테스트
+    - @SpringBootTest
+    - @Transactional
+    - Integration 테스트 할 때 test DB 혹은 local DB 
 - 스프링 JdbcTemplate
 - JPA
 - 스프링 데이터 JPA
