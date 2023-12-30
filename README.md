@@ -57,3 +57,14 @@
     - @GetMapping
     - HTML Form tag
 - 회원 웹 기능 - 조회
+### 👉 Section 6
+- H2 데이터베이스 설치
+    - Install & Settings
+- 순수 JDBC
+    - OCP(One of SOLID principles)
+    - JDBC
+    - DataSource
+- 스프링 통합 테스트
+- 스프링 JdbcTemplate
+- JPA
+- 스프링 데이터 JPA
