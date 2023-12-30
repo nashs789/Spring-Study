@@ -36,3 +36,17 @@
 - 회원 서비스 개발
 - 회원 서비스 테스트
     - Dependency Injection 
+### 👉 Section 4
+- 컴포넌트 스캔과 자동 의존관계 설정
+    - @Component과 @ComponentScan
+        - Scan Range 
+        - @Controller
+        - @Service
+        - @Repository
+    - Spring Container
+    - Singleton Object
+- 자바 코드로 직접 스프링 빈 등록하기
+    - DI
+        - Field DI
+        - Setter DI
+        - Construction DI 
