@@ -49,4 +49,11 @@
     - DI
         - Field DI
         - Setter DI
-        - Construction DI 
+        - Construction DI
+### 👉 Section 5
+- 회원 웹 기능 - 홈 화면 추가
+- 회원 웹 기능 - 등록
+    - @PostMapping
+    - @GetMapping
+    - HTML Form tag
+- 회원 웹 기능 - 조회
