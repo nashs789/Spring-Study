@@ -66,8 +66,32 @@
     - DataSource
 - 스프링 통합 테스트
     - @SpringBootTest
+        - 스프링 컨테이너와 함께 실행하게 해줌 
     - @Transactional
-    - Integration 테스트 할 때 test DB 혹은 local DB 
+        - 테스트 시 DB 작업 후 Rollback 해줌 -> 다음 테스트에 영향을 주지 않게 하기 위해서
+    - @Commit
+        - Rollback 하지 않기 위해서 사용 
+    - Integration 테스트 할 때 test DB 혹은 local DB
+    - 단위 테스트: 스프링 컨테이너 없이 -> 스프링 실행 후 컨테이너에 빈 등록하고 하면 시간이 오래 걸려서 단순 java 코드로 테스트
+    - 통합 테스트: 스프링 컨테이너와 함께
 - 스프링 JdbcTemplate
+    - JdbcTemplate과 MyBatis는 JDBC API에서 반복 코드를 제거 해줌
+        - ex) Connection 열고 쿼리 작성하고, 실행하고, 결과 받고 등 등
+    - 쿼리는 직접 작성 해야한다.
 - JPA
+    - query 작성을 하지 않아도 되는 이유도 있지만, 데이터와 SQL 중심이 아닌 객체 중심의 설계로 패러다임 전환이 가능
+    - JPA (Java Persistence API)
+    - Hibernate
+    - ORM (Object Relational Mapping)
+    - JPA 관련 Annotation
+        - @Entity
+        - @Id
+        - @GeneratedValue (IDENTITY 전략)
+        - @Column
+    - EntityManager
+        - Spring Boot 가 Injection 해줌
 - 스프링 데이터 JPA
+    - SpringDataJpa가 JpaRepository를 상속할 시 구현체 생성해줌
+    - Interface 만으로 공통적인 많은 부분 해결 가능 (Reflection으로 정보 얻어서 공통 처리 하는듯)
+    - 동적 쿼리는 Querydls 라이브러리를 사용
+    - 어려운 쿼리는 JPA도 네이티브 쿼리도 사용 가능함 or JdbcTemplate 사용 or Mybatis 사용
