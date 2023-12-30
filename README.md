@@ -25,3 +25,14 @@
         - StringConverter -> MappingJackson2HttpMessageConverter
     - HTTP Accept
         - 요청에 따라서 달라질 MessageConverter가 달라질 수 있음을 언급 
+### 👉 Section 3
+- 비지니스 요구사항 정리
+- 회원 도메인과 리포지토리 만들기
+    - Repository 
+    - ConcurrentHashMap
+    - Optional
+- 회원 리포지토리 테스트 케이스 작성
+    - Test Code 작성 
+- 회원 서비스 개발
+- 회원 서비스 테스트
+    - Dependency Injection 
