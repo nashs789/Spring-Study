@@ -95,3 +95,12 @@
     - Interface 만으로 공통적인 많은 부분 해결 가능 (Reflection으로 정보 얻어서 공통 처리 하는듯)
     - 동적 쿼리는 Querydls 라이브러리를 사용
     - 어려운 쿼리는 JPA도 네이티브 쿼리도 사용 가능함 or JdbcTemplate 사용 or Mybatis 사용
+### 👉 Section 7
+- AOP가 필요한 상황
+    - 공통 관심 사항(cross-cutting concern) vs 핵심 관심 사항(code concern)
+- AOP 적용(Aspect Oriented Programming)
+    - 관심 사항의 분리
+    - @Aspect
+    - @Around
+    - Proxy
+        - EnhanceBySpringCGLIB 에 의해서 복사된 프록시로 요청이 먼저 들어감
