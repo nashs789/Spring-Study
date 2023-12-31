@@ -3,6 +3,10 @@
 ### 강사: 김영한
 </br>
 
+## 📑 수강 목록
+- 스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술
+- [스프링 핵심 원리 - 기본편](https://github.com/nashs789/hello-spring-basic)
+
 ## 🗂️ 목차
 ### 👉 Section 0
 - 강의 소개
