@@ -2,6 +2,7 @@ package hellospringbasic.core;
 
 import hellospringbasic.core.discount.DiscountPolicy;
 import hellospringbasic.core.discount.FixDiscountPolicy;
+import hellospringbasic.core.discount.RateDiscountPolicy;
 import hellospringbasic.core.member.MemberService;
 import hellospringbasic.core.member.MemberServiceImpl;
 import hellospringbasic.core.member.MemoryMemberRepository;
@@ -23,6 +24,7 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
+        //return new FixDiscountPolicy();
     }
 }
