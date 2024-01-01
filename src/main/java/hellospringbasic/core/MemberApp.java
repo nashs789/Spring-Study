@@ -3,11 +3,11 @@ package hellospringbasic.core;
 import hellospringbasic.core.member.Grade;
 import hellospringbasic.core.member.Member;
 import hellospringbasic.core.member.MemberService;
-import hellospringbasic.core.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member mem = new Member(1L, "memA", Grade.VIP);
 
         memberService.join(mem);
