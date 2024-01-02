@@ -82,8 +82,44 @@
     - Singleton Container
 - 컨테이너에 등록된 모든 빈 조회
 - 스프링 빈 조회 - 기본
+    - NoSuchBeanDefinitionException
 - 스프링 빈 조회 - 동일한 타입이 둘 이상
-- 스프링 빈 조회 - 상송 관계
+    - NoUniqueBeanDefinitionException -> 빈의 구현체가 중복되는 경우
+- 스프링 빈 조회 - 상속 관계
+    - 자식 클래스는 전부 끌려나온다.
+    - NoUniqueBeanDefinitionException -> 빈의 구현체가 여러개 있는 경우
 - BeanFactorty와 ApplicationContext
+    - BeanFactorty <- ApplicationContext <- AnnotationConfigApplicationContext
+    - ApplicationContext는 Bean 관리를 위한 BeanFactorty 뿐만 아니라 여거가지 인터페이스를 상속 받고 있음
+        - EnvironmentCapable: 환경 변수(로컬, 개발, 운영등 구분)
+        - ListableBeanFactory
+        - HierarchicalBeanFactory
+        - MessageSource: 다국어 기능
+        - ApplicationEventPublisher: 이벤트 발생 및 구독 모델
+        - ResourcePatternResolver: 파일, 클래스, 외부 등에서 리소스 편리하게 조회
 - 다양한 설정 형식 지원 - 자바 코드, XML
+    - GenericApplicationContext
 - 스프링 빈 설정 메타 정보 - BeanDefinition
+    - BeanDefinition
+        - 추상화를 통해서 빈을 등록하기 때문에 xml, class, annotation 전부 지원 가능하다.
+        - 각 구현체는 BeanReader를 통해서 메타 정보를 만들고 BeanDefinition에 저장
+### 👉 Section 5
+- 앱 어플리케이션과 싱글톤
+    - 멀티 스레드를 사용하면서 여러 호출로 동시에 여러개의 객체가 중복되서 생성 -> 메모리 낭비
+- 싱글톤 패턴
+    - 생성자를 private으로 설정해 new 키워드로 인스턴스 생성 방지
+    - 문재점
+        - 싱글톤 관리를 위한 코드
+        - 구현체에 의존함 -> DIP 위반
+        - 클라이언트가 구현체에 의존함 -> OCP 위반 가능성
+        - private한 생성자 -> 자식 클래스 어려움
+        - 안티패턴으로 불림
+- 싱글톤 컨테이너
+    - 특정 상황에 맞춰 싱글톤이 아닌 스코프에 맞춰서 생성하는 경우도 있음
+- 싱글톤 방식의 주의점
+    - statefull하지 않은 stateless로 설계
+        - 필드에 의존하면 안됨
+        - 필드를 수정할 수 있으면 안됨(readonly) 
+- @Configuration과 싱글톤
+- @Configuration과 바이트코드 조작 마법
+    - SpringCGLIB 바이트코드 조작 라이브러리를 통해서 클래스 인스턴스 생성해 빈 컨테이너에 등록
