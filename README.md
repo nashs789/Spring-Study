@@ -122,3 +122,4 @@
         - 필드를 수정할 수 있으면 안됨(readonly) 
 - @Configuration과 싱글톤
 - @Configuration과 바이트코드 조작 마법
+    - SpringCGLIB 바이트코드 조작 라이브러리를 통해서 클래스 인스턴스 생성해 빈 컨테이너에 등록
