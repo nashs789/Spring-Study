@@ -132,5 +132,15 @@
         - 기본적으로 컨테이너에서 타입이 같은 빈을 찾아서 주입
         - 생성자 파라미터도 위와 같이 찾아서 주입
 - 탐색 위치와 기본 스캔 대상
+    - @ComponentScan에 경로를 지정
+        - default: @ComponentScan이 붙은 클래스의 패키지를 시작 위치로 스캔 시작
 - 필터
+    - @Interface
+    - @Filter
 - 중복 등록과 충돌
+    - BeanDefinitionStoreException -> 중복으로 인한 발생 에러
+    - 자동 vs 자동 충돌
+    - 수동 vs 자동 충돌
+        - Spring Framework: Overriding bean definition -> 수동 빈이 우선순위를 갖고 오버라이딩
+        - Spring Boot: overriding is disabled -> 오버라이딩이 default 값으로 false
+            - 허용하고 싶다면 spring.main.allow-bean-definition-overriding=true 프로퍼티에 추가 해줘야함 
