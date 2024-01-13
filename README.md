@@ -209,3 +209,22 @@
     - 권고되는 방법
     - 자바 표준이기 때문에 스프링에 종속적이지 않다
     - 외부 라이브러리에는 적용 불가능하기 때문에 @Bean에 기능 이용
+### 👉 Section 8
+- 빈 스코프란?
+    - 싱글톤
+    - 프로토타입
+    - 웹 관련 스코프
+        - request
+        - session
+        - application
+- 프로토타입 스코프
+- 프로토타입 스코프 - 싱글톤 빈과 함께 사용시 문제점
+    - 싱글톤 빈 객체에서 프로토타입 빈을 주입 받는 경우 싱글톤으로 관리되서 목적에 맞게 사용할 수 없음(코드로 보는게 이해 쉬움)
+- 프로토타입 스코프 - 싱글톤 빈과 함께 사용시 Provider로 문제 해결 웹 스코프
+    - ObjectFactory, ObjectProvider
+    - Provider
+        - implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+            - springboot 3.xx 부터 'javax.x' 패키지는 오류나서 'jakarta.x' 사용 해야함 
+- request 스코프 예제 만들기
+- 스코프와 Provider
+- 스코프와 프록시
