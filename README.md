@@ -209,7 +209,7 @@
     - 권고되는 방법
     - 자바 표준이기 때문에 스프링에 종속적이지 않다
     - 외부 라이브러리에는 적용 불가능하기 때문에 @Bean에 기능 이용
-### 👉 Section 8
+### 👉 Section 9
 - 빈 스코프란?
     - 싱글톤
     - 프로토타입
@@ -224,7 +224,23 @@
     - ObjectFactory, ObjectProvider
     - Provider
         - implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
-            - springboot 3.xx 부터 'javax.x' 패키지는 오류나서 'jakarta.x' 사용 해야함 
+            - springboot 3.xx 부터 'javax.x' 패키지는 오류나서 'jakarta.x' 사용 해야함
+    - DL(Dependency Lookup)
+    - @Lookup
+- 웹 스코프
+    - request: 각각의 HTTP 요청 하나가 들어오고 나갈 때 까지
+    - session: HTTP Session과 생명주기 동일
+    - application: 서블릿 컨텍스트의 생명주기와 동일
+    - websocket: 웹 소켓과 생명주기 동일
 - request 스코프 예제 만들기
+    - No thread-bound request found 에러 (IllegalStateException)
+        - scope를 request로 잡고, DI 받으려고 해서 
 - 스코프와 Provider
+    - 위에서 발생한 에러를 ObjectProvider를 통해서 해결
 - 스코프와 프록시
+    - @Scope 옵션 proxyMode = ScopedProxyMode.TARGET_CLASS
+    - 가짜 프록시 클래스 생성 후 주입 -> CGLIB가 동작
+        - 컨테이너에 가짜 프록시가 등록되어 있음
+        - 실제 구현체가 필요한 경우 내부 로직을 통해 진짜 구현체를 찾음
+    - 핵심: 필요한 시점까지 지연시킴
+    - 주의점: 싱글톤이 아니기 때문에 조심히 사용해야함
