@@ -1,0 +1,58 @@
+spring:
+  profiles:
+    active: local
+    group:
+      local: local, common, secret
+      blue: blue, common, secret
+      green: green, common, secret
+
+server:
+  env: blue
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+server:
+  port: 8080
+  address: localhost
+
+serverName: local_server
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: blue
+
+server:
+  port: 8080
+  address: 3.35.43.15
+
+serverName: blue_server
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: green
+
+server:
+  port: 8080
+  address: 3.35.43.15
+
+serverName: green_server
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: common
+
+---
