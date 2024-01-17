@@ -68,10 +68,8 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script_stop: true
           script: |
-            echo 22222
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/live_server:latest
-            echo 33333
-            echo cat docker-compose-blue.yml
+            echo pwd
             sudo docker-compose -f docker-compose-${{env.TARGET_UPSTREAM}}.yml up -d
       
       - name: Check deploy server URL
