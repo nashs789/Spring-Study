@@ -59,6 +59,7 @@ jobs:
             echo "STOPPED_PORT=8080" >> $GITHUB_ENV
             echo "TARGET_UPSTREAM=blue" >> $GITHUB_ENV
           fi
+          echo 11111
           
       - name: Docker compose
         uses: appleboy/ssh-action@master
@@ -68,6 +69,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script_stop: true
           script: |
+            echo 22222
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/live_server:latest
             echo cat docker-compose-blue.yml
             sudo docker-compose -f docker-compose-${{env.TARGET_UPSTREAM}}.yml up -d
