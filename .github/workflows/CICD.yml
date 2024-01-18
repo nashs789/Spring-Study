@@ -22,8 +22,6 @@ jobs:
 
       - name: Build with Gradle (Skip Tests)
         run: |
-          echo ${{secrets.APPLICATION_SECRET}} | base64 --decode > ./src/main/resources/application-secret.yml
-          cat ./src/main/resources/application-secret.yml
           chmod +x gradlew
           ./gradlew clean build -x test
 
