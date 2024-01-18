@@ -43,7 +43,7 @@ spring:
       on-profile: green
 
 server:
-  port: 8080
+  port: 8081
   address: 3.35.43.15
 
 serverName: green_server
