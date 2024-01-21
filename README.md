@@ -3,7 +3,11 @@
 ### 강사: 김영한
 </br>
 
-## 📑 수강 목록
+## 📑 수강 목록(Spring Boot)
+- [스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://github.com/nashs789/spring-intro)
+- 스프링 핵심 원리 - 기본편
+- 
+## 📑 수강 목록(JPA)
 - 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
 ## 🗂️ 목차
