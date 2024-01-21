@@ -34,6 +34,7 @@ public class JpaMain {
             mem.setName("HelloJPA");
              */
 
+            /*
             List<Member> res = em.createQuery("select m from Member as m", Member.class)
                                  .setFirstResult(1)
                                  .setMaxResults(2)
@@ -42,6 +43,20 @@ public class JpaMain {
             for(Member mem : res) {
                 System.out.println("mem.getName() = " + mem.getName());   
             }
+            */
+
+            Member mem = new Member();
+            mem.setId(101L);
+            mem.setName("Hello-Hi");
+
+            System.out.println("=== Before ===");
+            em.persist(mem);
+            System.out.println("=== After ===");
+
+            Member resMem = em.find(Member.class, 101L);
+
+            System.out.println("resMem.getId() = " + resMem.getId());
+            System.out.println("resMem.getName() = " + resMem.getName());
 
             tx.commit();
         } catch(Exception e) {
