@@ -57,3 +57,30 @@
   - 모든 데이터 변경은 트랜잭션 내에서 실행
   - JPQL
     - SQL이 아닌 객체 중심으로 쿼리를 생성해서 종속적이지 않도록 검색 조건을 갖도록함
+
+### 👉 Section 3
+- 영속성 컨텍스트
+  - EntityManager와 PersistenceContext가 1:1로 매핑되어 있음 -> PersitenceContext는 여러개의 EntityManager를 갖음(아마 스프링 Bean 말하는 듯)
+  - 생명주기
+    - 비영속(new/transient): 영속성 컨텍스트와 무관한 새로운 상태
+        - JPA랑 관계 없이 인스턴스만 생성한 상태(EntityManager랑 관계 없을 때)
+    - 영속(managed): 영속성 컨텍스트에 관리되는 상태
+    - 준영속(detached): 영속성 컨텍스트에 저장되어 있다가 분리된 상태
+      - detached 메소드 호출시 영속성 컨텍스트에서 제거
+    - 삭제(removed): 삭제된 상태
+  - 장점
+    - 1차 캐시
+      - Entity에서 설정한 DB PK 값이 key 값으로, Entity는 value로 매핑
+      - DB에서 조회 하기 전에 캐시 존재한다면 불필요한 I/O 작업 제거
+      - ❖ 한 트랜잭션에서만 존재하는 캐시이기 때문에 성능의 이점을 크게 기대하기는 힘들다
+    - 동일성(Identity) 보장
+      - DB의 트랜잭션 격리레벨인 Repeatable Read를 어플리케이션 레이어에서 제공
+    - 트랜잭션 쓰기 지연(transactional write-behind)
+      - 1차 캐시에 저장하면서 쓰기 지연 SQL 저장소(Write Behind SQL Storage)에 Insert 쿼리를 생성해서 저장한다.
+      - commit 시점에 쿼리 실행 -> flush가 진행됨
+      - batch_size를 통해서 쿼리 갯수 조절 가능
+    - 뵨굥 검자(Dirty Checking)
+    - 지연 로딩(Lazy Loading)
+- 플러시
+- 준영속 상태
+- 정리
