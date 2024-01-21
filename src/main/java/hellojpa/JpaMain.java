@@ -69,13 +69,16 @@ public class JpaMain {
             Member resMem2 = em.find(Member.class, 101L);
             */
 
-            // transactional write-behind
+            /* - transactional write-behind
             Member mem1 = new Member(150L, "A");
             Member mem2 = new Member(160L, "B");
 
             em.persist(mem1);
             em.persist(mem2);
-            System.out.println("=================");
+             */
+
+            Member mem = em.find(Member.class, 150L);
+            mem.setName("ZZZZZ");
 
             tx.commit();
         } catch(Exception e) {
