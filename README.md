@@ -36,4 +36,24 @@
 
 ### 👉 Section 2
 - Hello JPA - 프로젝트 생성
+  - Spring boot + maven 프로젝트 생성
+  - H2 데이터베이스 설정 세팅
 - Hello JPA - 애플리케이션 개발
+  - createEntityManagerFactory
+    - persistence.xml의 persistence-unit의 name속성 값이 인자로
+  - EntityManager
+    - 쓰레드간 공유 x
+  - @Entity
+  - @Id
+  - SQL 
+    - Select
+      - find
+    - Insert
+      - persist
+    - Update
+      - Java 인스턴스 필드를 수정하면 update 수행
+    - Delete
+      - remove
+  - 모든 데이터 변경은 트랜잭션 내에서 실행
+  - JPQL
+    - SQL이 아닌 객체 중심으로 쿼리를 생성해서 종속적이지 않도록 검색 조건을 갖도록함
