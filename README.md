@@ -4,7 +4,7 @@
 </br>
 
 ## 📑 수강 목록(Spring Boot)
-- [스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://github.com/nashs789/hello-spring)
+- [스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://github.com/nashs789/spring-intro)
 - 스프링 핵심 원리 - 기본편
 
 ## 📑 수강 목록(JPA)
