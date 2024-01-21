@@ -45,6 +45,7 @@ public class JpaMain {
             }
             */
 
+            /* - Persistence Context
             Member mem = new Member();
             mem.setId(101L);
             mem.setName("Hello-Hi");
@@ -57,6 +58,16 @@ public class JpaMain {
 
             System.out.println("resMem.getId() = " + resMem.getId());
             System.out.println("resMem.getName() = " + resMem.getName());
+             */
+
+            /* - First Level Cache
+            Member mem = new Member();
+            mem.setId(101L);
+            mem.setName("Hello-Hi");
+
+            Member resMem1 = em.find(Member.class, 101L);
+            Member resMem2 = em.find(Member.class, 101L);
+            */
 
             tx.commit();
         } catch(Exception e) {
