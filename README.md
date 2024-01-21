@@ -80,7 +80,17 @@
       - commit 시점에 쿼리 실행 -> flush가 진행됨
       - batch_size를 통해서 쿼리 갯수 조절 가능
     - 뵨굥 검자(Dirty Checking)
+      - JPA의 목적이 java 콜렉션 처럼 사용하는 것 -> update시 조회된 인스턴스 값 변경 후 추가 조치 없어도 DB에 반영
+        - 어떻게? -> 1차 캐시에 스냅샷을 가지고 있다가 flush 호출 시(commit) 엔티티와 스냅샷을 비교해서 Dirty check 후 update 쿼리 생성 후 반영
     - 지연 로딩(Lazy Loading)
 - 플러시
+  - 영속성 컨텍스트 변경사항 DB에 반영
+  - Dirty Checking -> write-behind SQL storage 저장 -> write-behind
+  - 플러쉬 방법 -> 왜 필요?: 쿼리를 먼저 보기 위해서(테스트)
+    - flsuh() 명시적 호출
+    - commit
+    - JPQL 실행
+      - raw 쿼리를 사용하기 때문에 persist로 캐시에 저장해도 DB에 없기 떄문에 조회 불가능해서
+  - 캐시를 지우는게 아님(쓰기 지연 SQL 저장소의 쿼리를 DB에 반영)
 - 준영속 상태
 - 정리
