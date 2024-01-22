@@ -99,3 +99,46 @@
   - EntityManager.clear()
   - EntityManager.close()
 - 정리
+
+### 👉 Section 4
+- 객체와 테이블 매핑
+  - 매핑
+    - 갹체와 태아불: @Entity, @Table
+      - @Entity: JPA가 관리하는 클래스
+        - 기본 생성자 필수
+        - final, enum, interfacem, inner 클래스 x
+        - 저장할 필드 final 예약어 x
+      - @Table: 엔티티와 매핑할 테이블 지정
+        - name 속성을 통해서 지정 가능
+    - 필드와 컬럼: @Column
+    - 기본 키: @Id
+    - 연관관계: @ManyToOne, @JoinColumn
+- 데이터베이스 스키마 자동 생성
+  - 어플리케이션에서 맺은 관계에 따라사 DDL을 자동 생성
+  - hibernate.hbm2ddl.auto -> dialect 설정에 따른 문법을 따른다
+    - create: drop -> create
+    - create-drop: create -> drop
+    - update: 변경점만 반영 ex) alter를 통해서 변경점 ddl 작성 (지우는건 지원x)
+    - validate: 엔티티와 테이블 매핑 상태 확인 (정상적으로 되었는지)
+    - none: 기능 없음(사용x)
+- 필드와 컬럼 매핑
+  - @Column
+    - name: 필드와 매핑할 테이블의 컬럼 이름
+    - insertable: 등록 가능 여부 (default: true)
+    - updatable: 수정 가능 여부 (default: true)
+    - length: 컬럼 길이
+    - nullable: null 제약 조건
+    - unique: unique constraints 제약 조건
+    - columnDefinition: ddl 직접 작성
+    - precison, sacle: BigDecimal, BigInterger 타입에서 정밀한 소수 다룰 때
+  - @Enumerated 
+    - EnumType.String: enum 클래스의 문자열 default(EnumType.ORDINAL - enum 클래스에서 선언된 순서로 저장)
+  - @Temporal
+    - 최신 버전이면 LocalDateTime 클래스로 만들면 자동으로 Timestamp로 지정된다
+  - @Lob
+    - 문자: CLOB
+    - 바이트: BLOB
+  - @Transient
+    - 컬럼 매핑에서 제외
+- 기본 키 매핑
+- 실전 예제 1 - 요구사항 분석과 기본 매핑
