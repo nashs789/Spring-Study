@@ -141,4 +141,18 @@
   - @Transient
     - 컬럼 매핑에서 제외
 - 기본 키 매핑
+  - 어떻게?
+    - @Id: 개발자가 직접 세팅
+    - @GeneratedValue:자동 채번
+      - 필드 strategy?
+        - IDENTITY: 기본키 생성을 데이터베이스에 위임
+          - DB까지 넘어가야지만 PK 값을 알 수 있기 때문에 영속성 컨텍스트 내에서는 PK여부를 모름
+            - em.persist를 호출 해서 DB에 먼저 저장해서 PK 값을 영속성 컨텍스트에서 갖도록 해줌 
+        - SEQUENCE
+          - @SequenceGenerate로 sequence 이름 설정 가능
+          - Sequence Number는 DB가 관리하기 때문에 영속성 컨텍스트에서는 초기에 정보가 없어서 DB에서 받아와야함(DB sequence조회 -> 영속성 컨텍스트 저장)
+            - Identity는 Insert 후 영속성 컨텍스트에 저장하는데 비해서 Sequence는 Sequence Number를 얻어온 후 영속성 컨텍스트에 저장 했다가 persist를 호출하기 때문에 통신에 더 많은 비용이 들어간다는 고민이 있음
+              - 네트워크 통신 최적화를 위해서 미리 가져와서 메모리에 가져와서 Sequence를 채번해서 사용한다 (default: 50)
+        - Table: 별도의 테이블을 구성해서 관리하는 방법
+        - AUTO
 - 실전 예제 1 - 요구사항 분석과 기본 매핑
