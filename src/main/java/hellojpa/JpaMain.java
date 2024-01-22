@@ -82,11 +82,12 @@ public class JpaMain {
             mem.setName("ZZZZZ");
              */
 
-            // Detach
+            /* - Detach
             Member mem = em.find(Member.class, 150L);
             mem.setName("AAAAA");
 
             em.detach(mem);
+             */
 
             // em.clear(); 영속성 컨텍스트 모두 detach
 
