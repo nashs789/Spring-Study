@@ -93,4 +93,9 @@
       - raw 쿼리를 사용하기 때문에 persist로 캐시에 저장해도 DB에 없기 떄문에 조회 불가능해서
   - 캐시를 지우는게 아님(쓰기 지연 SQL 저장소의 쿼리를 DB에 반영)
 - 준영속 상태
+  - persist 호출 없이 find를 하게 된다면 캐시에 존재하지 않기 때문에 DB 조회 후 캐시에 저장
+  - 준영속이란? -> 영속성 컨텍스트에서 분리한다 -> 더 이상 영속성 컨텍스트가 제공하는 컨텐츠 사용 불가능
+  - EntityManager.detach()
+  - EntityManager.clear()
+  - EntityManager.close()
 - 정리
