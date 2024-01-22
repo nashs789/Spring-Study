@@ -88,6 +88,8 @@ public class JpaMain {
 
             em.detach(mem);
 
+            // em.clear(); 영속성 컨텍스트 모두 detach
+
             tx.commit();
         } catch(Exception e) {
             tx.rollback();
