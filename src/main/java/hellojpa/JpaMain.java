@@ -77,8 +77,16 @@ public class JpaMain {
             em.persist(mem2);
              */
 
+            /* - Dirty Checking
             Member mem = em.find(Member.class, 150L);
             mem.setName("ZZZZZ");
+             */
+
+            // Detach
+            Member mem = em.find(Member.class, 150L);
+            mem.setName("AAAAA");
+
+            em.detach(mem);
 
             tx.commit();
         } catch(Exception e) {
