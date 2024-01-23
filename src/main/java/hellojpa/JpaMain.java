@@ -91,6 +91,12 @@ public class JpaMain {
 
             // em.clear(); 영속성 컨텍스트 모두 detach
 
+            // PK generate strategy
+            Member mem = new Member();
+            mem.setUsername("C");
+
+            em.persist(mem);
+
             tx.commit();
         } catch(Exception e) {
             tx.rollback();
