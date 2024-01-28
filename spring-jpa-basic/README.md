@@ -25,6 +25,8 @@
     - 트랜잭션을 지원하는 쓰기 지연(transactional write-behind)
     - 지연 로딩(Lazy Loading)
 
+<hr/>
+ 
 ### 👉 Section 2
 - Hello JPA - 프로젝트 생성
   - Spring boot + maven 프로젝트 생성
@@ -49,6 +51,8 @@
   - JPQL
     - SQL이 아닌 객체 중심으로 쿼리를 생성해서 종속적이지 않도록 검색 조건을 갖도록함
 
+<hr/>
+ 
 ### 👉 Section 3
 - 영속성 컨텍스트
   - EntityManager와 PersistenceContext가 1:1로 매핑되어 있음 -> PersitenceContext는 여러개의 EntityManager를 갖음(아마 스프링 Bean 말하는 듯)
@@ -90,6 +94,8 @@
   - EntityManager.clear()
   - EntityManager.close()
 - 정리
+
+<hr/>
 
 ### 👉 Section 4
 - 객체와 테이블 매핑
@@ -147,6 +153,8 @@
         - Table: 별도의 테이블을 구성해서 관리하는 방법
         - AUTO
 - 실전 예제 1 - 요구사항 분석과 기본 매핑
+
+<hr/>
 
 ### 👉 Section 5
 - 단방향 연관관계
