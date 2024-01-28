@@ -6,5 +6,5 @@
 </br>
 
 ## 📑 수강 목록(JPA)
-- 자바 ORM 표준 JPA 프로그래밍 - 기본편
+- [자바 ORM 표준 JPA 프로그래밍 - 기본편](https://github.com/nashs789/spring-study/tree/main/spring-jpa-basic)
 </br>
