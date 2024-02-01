@@ -75,7 +75,7 @@
   - HTTP Message 생성 및 헤더 정보 확인 후 응답
 - HttpServletRequest - 개요
   - Servlet은 HTTP 요청 메세지를 파싱 해서 객체로 만들어준다 (HttpServletRequest, HttpServletResponse)
-- HttpServletRequest - 기본 사용법
+- HttpServletRequest -기본 사용법
 - HTTP 요청 데이터 - 개요
 - HTTP 요청 데이터 - GET 쿼리 파라미터
   - 검색, 필터, 페이징등에 사용되는 방식
@@ -85,8 +85,18 @@
 - HTTP 요청 데이터 - POST HTML Form
   - 쿼리 스트링이나 Body에 payload로 데이터를 보내나 getParameter()를 통해서 데이터를 받을 수 있음
 - HTTP 요청 데이터 - API 메시지 바디 - 단순 텍스트
+  - HttpBody 데이터를 InputStream으로 받아서 문자열로 출력 까지
+    - 인코딩 방식 맞춰주기
 - HTTP 요청 데이터 - API 메시지 바디 - JSON
+  - Json 라이브러리
 - HttpServletResponse - 기본 사용법
-- HTTP 응답 데이터 - 단순 텍스트, HTML
+  - HTTP 응답코드 지정
+  - 헤더 생성
+  - 바디 생성
+  - 편의 기능
+    - Content-Type
+    - Cookie
+    - Redirect
+- HTTP 응답 데이터 - 단순 텍스트, HTML 
 - HTTP 응답 데이터 - API JSON
 - 정리
