@@ -128,6 +128,8 @@
 - View 분리 - v2
   - MyView 객체를 생성해서 forward 하는 중복 코드 한 곳에서 관리
 - Model 추가 - v3
+  - ModelView 객체를 생성해 불필요한 request, response 객체를 파라미터로 보내는 것 제거
+  - viewResolver 역할의 메소드를 만들어 중복 코드 제거
 - 단순하고 실용적인 컨트롤러 - v4
 - 유연한 컨트롤러1 - v5
 - 유연한 컨트롤러2 - v6
