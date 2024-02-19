@@ -165,5 +165,6 @@
   - @Controller: componentScan + RequestMappingHandlerMapping 두 개의 대상이 된다.
     - @Component + @RequestMapping (class level)
 - 스프링 MVC - 컨트롤러 통합
+  - 하나의 컨트롤러에서 매핑하도록 구현
 - 스프링 MVC - 실용적인 방식
 - 정리
