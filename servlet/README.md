@@ -162,6 +162,8 @@
     - InternalResourceViewResolver
     - ....
 - 스프링 MVC - 시작하기
+  - @Controller: componentScan + RequestMappingHandlerMapping 두 개의 대상이 된다.
+    - @Component + @RequestMapping (class level)
 - 스프링 MVC - 컨트롤러 통합
 - 스프링 MVC - 실용적인 방식
 - 정리
