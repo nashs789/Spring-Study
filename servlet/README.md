@@ -156,6 +156,11 @@
       - SimpleControllerHandlerAdapter
       - ....
 - 뷰 리좀버
+  - properties 에 prefix, suffix 세팅
+  - ViewResolver 우선순위
+    - BeanNameViewResolver
+    - InternalResourceViewResolver
+    - ....
 - 스프링 MVC - 시작하기
 - 스프링 MVC - 컨트롤러 통합
 - 스프링 MVC - 실용적인 방식
