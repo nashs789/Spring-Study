@@ -136,3 +136,41 @@
   - 다형성을 이용한 여러 버전의 핸들러가 매핑되어 동작할 수 있도록 구현
 - 유연한 컨트롤러2 - v6
 - 정리
+
+### 👉 Section 5
+- 스프링 MVC 전체 구조
+  - FrontController ➡ DispatcherServlet
+  - handlerMappingMap ➡ HandlerMapping
+  - MyHandlerAdapter ➡ HandlerAdapter
+  - ModelView ➡ ModelAndView
+  - viewResolver ➡ ViewResolver
+  - MyView ➡ View
+- 핸들러 매핑 핸들러 어댑터
+    - HandlerMapping 우선순위
+      - RequestMappingHandlerMapping
+      - BeanNameUrlHandlerMapping
+      - ....
+    - HandlerAdapter 우선순위
+      - RequestMappingHandlerAdapter
+      - HttpRequestHandlerAdapter
+      - SimpleControllerHandlerAdapter
+      - ....
+- 뷰 리좀버
+  - properties 에 prefix, suffix 세팅
+  - ViewResolver 우선순위
+    - BeanNameViewResolver
+    - InternalResourceViewResolver
+    - ....
+- 스프링 MVC - 시작하기
+  - @Controller: componentScan + RequestMappingHandlerMapping 두 개의 대상이 된다.
+    - @Component + @RequestMapping (class level)
+- 스프링 MVC - 컨트롤러 통합
+  - 하나의 컨트롤러에서 매핑하도록 구현
+- 스프링 MVC - 실용적인 방식
+  - HttpRequest 에서 파라미터 받는 방식 변경
+    - @GetMapping
+    - @PostMapping
+  - Restful API 방식으로 변경
+- 정리
+
+### 👉 Section 6
