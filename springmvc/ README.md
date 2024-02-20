@@ -16,8 +16,10 @@
   - @PathVariable
   - content type에 따른 매핑
 - 요청 매핑 - API 예시
-  - Restful한 API 설계 예시 실습
+  - Restful 한 API 설계 예시 실습
 - HTTP 요청 - 기본, 헤더 조회
+  - spring 에서 제공하는 헤더 정보 보는 방법 실습
+    - HttpServletRequest 에서 꺼내는 방식이 아닌 더 간단한 방법을 제공
 - HTTP 요청 파라미터 - 쿼리 파라미터, HTML, Form
 - HTTP 요청 파라미터 - @RequestParam
 - HTTP 요청 파라미터 - @ModelAttribute
