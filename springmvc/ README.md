@@ -34,6 +34,14 @@
   - @RequestParam, @ModelAttribute 둘 다 생략 가능한데 무슨 기준으로 판단할까?
     - 기본 타입과 나머지 타입 두 가지고 구분해서 판단한다.
 - HTTP 요청 메시지 - 단순 텍스트
+  - HttpEntity 를 통해서 header, body 정보 조회 가능
+    - HttpEntity 를 상속받는 밑의 두 클래스
+    - RequestEntity
+    - ResponseEntity
+  - Entity 클래스 사용하지 않고 어노테이션으로 해결 가능
+    - @RequestBody
+    - @ResponseBody
+  - HttpMessageConverter
 - HTTP 요청 메시지 - JSON
 - 응답 - 정적 리소스, 뷰 템플릿
 - HTTP 응답 - HTTP API, 메시지 바디에 직접 입력
