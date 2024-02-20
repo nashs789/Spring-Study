@@ -21,6 +21,10 @@
   - spring 에서 제공하는 헤더 정보 보는 방법 실습
     - HttpServletRequest 에서 꺼내는 방식이 아닌 더 간단한 방법을 제공
 - HTTP 요청 파라미터 - 쿼리 파라미터, HTML, Form
+  - 쿼리 스트링 @RequestParam 을 통해서 받음
+    - 기본형의 경우 required 가 false 여도 null 은 예외를 발생시킴
+      - Wrapper Class 사용할 것
+    - defaultValue 를 설정하면 reuqired 는 사용하지 않아도 된다.(= 항상 값 있음)
 - HTTP 요청 파라미터 - @RequestParam
 - HTTP 요청 파라미터 - @ModelAttribute
 - HTTP 요청 메시지 - 단순 텍스트
