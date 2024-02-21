@@ -5,7 +5,7 @@
 //import java.util.Date;
 //
 //@Entity
-//public class Member {
+//public class hellojpa.Member {
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private int id;
@@ -13,7 +13,7 @@
 //    @Column(name = "name")
 //    private String username;
 //
-//    public Member() {}
+//    public hellojpa.Member() {}
 //
 //    public int getId() {
 //        return id;
