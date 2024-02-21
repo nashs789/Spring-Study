@@ -43,6 +43,9 @@
     - @ResponseBody
   - HttpMessageConverter
 - HTTP 요청 메시지 - JSON
+  - @RequestBody 는 생략 불가능
+    - 생략시 @ModelAttribute 가 default 값이고, 쿼리 스트링에 따라서 null, 0 값 등으로 초기화됨 
+  - content-type 이 application/json 로 설정되어 있어야 JSON 요청에 해당하는 Converter 가 동 
 - 응답 - 정적 리소스, 뷰 템플릿
 - HTTP 응답 - HTTP API, 메시지 바디에 직접 입력
 - HTTP 메시지 컨버터
