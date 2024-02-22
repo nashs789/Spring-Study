@@ -12,10 +12,21 @@ public class Member {
     @Column(name = "USERNAME")
     private String username;
 
+    @OneToOne
+    @JoinColumn(name = "locker_id")
+    private Locker locker;
+
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "TEAM_ID")
 //    private Team team;
 
+    public Locker getLocker() {
+        return locker;
+    }
+
+    public void setLocker(Locker locker) {
+        this.locker = locker;
+    }
 
     public Long getId() {
         return id;
