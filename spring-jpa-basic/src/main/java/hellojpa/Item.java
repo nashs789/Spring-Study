@@ -1,20 +1,17 @@
 package hellojpa;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 @Entity
-public class Locker {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "ITEM_TYPE")
+public class Item {
 
     @Id @GeneratedValue
     private Long id;
 
     private String name;
-
-    @OneToOne(mappedBy = "locker")
-    private Member member;
+    private int price;
 
     public Long getId() {
         return id;
@@ -30,5 +27,13 @@ public class Locker {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

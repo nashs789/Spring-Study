@@ -212,3 +212,22 @@
 - 다대다 [N:M]
   - 실무에서는 요구사항을 다 담아낼 수 없기 때문에 중계 테이블을 엔티티로 만들어서 OneToMany 혹은 ManyToOne으로 변경한다.
 - 실전 예제 3 - 다양한 연관관계 매핑
+
+### 👉 Section 7
+- 상속관계 매핑
+  - @Inheritance
+    - 속성 strategy
+      - JOINED
+        - 테이블을 분할해서 생성
+      - SINGLE_TABLE
+        - 하나의 테이블에 모든 컬럼을 만들고, 데이터가 안들어가는건 null로 채운다.
+        - DTYPE 컬럼이 생성되서 구분 가능하도록한다.
+      - TABLE_PER_CLASS(abstract class)
+        - 슈퍼 클래스의 속성을 서브 클래스가 중복되서 갖도록 허용하는 전략(슈퍼 클래스 테이블 생성 x)
+  - @DiscriminatorColumn 상속받은 엔티티명을 넣게됨
+  - @DiscriminatorValue 을 통해서 DTYPE 대신 컬럼명 변경 가능하다.
+- Mapped Superclass - 매핑 정보 상속
+  - 공통 매핑 정보가 필요할 때 사용
+  - 상속 관계 x, 엔티티 x, 테이블과 매핑 x
+    - 조회, 검색 불가능
+- 실전 예제 4 - 상속관계 매핑
