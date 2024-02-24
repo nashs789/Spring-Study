@@ -17,36 +17,36 @@
 //
 //        try {
 //            /* - Insert
-//            Member mem = new Member();
+//            hellojpa.Member mem = new hellojpa.Member();
 //            mem.setId(2L);
 //            mem.setName("helloB");
 //            em.persist(mem);
 //             */
 //
 //            /* - Find
-//            Member mem = em.find(Member.class, 2L);
+//            hellojpa.Member mem = em.find(hellojpa.Member.class, 2L);
 //            System.out.println("mem.getId() = " + mem.getId());
 //            System.out.println("mem.getName() = " + mem.getName());
 //             */
 //
 //            /* - Update
-//            Member mem = em.find(Member.class, 1L);
+//            hellojpa.Member mem = em.find(hellojpa.Member.class, 1L);
 //            mem.setName("HelloJPA");
 //             */
 //
 //            /*
-//            List<Member> res = em.createQuery("select m from Member as m", Member.class)
+//            List<hellojpa.Member> res = em.createQuery("select m from hellojpa.Member as m", hellojpa.Member.class)
 //                                 .setFirstResult(1)
 //                                 .setMaxResults(2)
 //                                 .getResultList();
 //
-//            for(Member mem : res) {
+//            for(hellojpa.Member mem : res) {
 //                System.out.println("mem.getName() = " + mem.getName());
 //            }
 //            */
 //
 //            /* - Persistence Context
-//            Member mem = new Member();
+//            hellojpa.Member mem = new hellojpa.Member();
 //            mem.setId(101L);
 //            mem.setName("Hello-Hi");
 //
@@ -54,36 +54,36 @@
 //            em.persist(mem);
 //            System.out.println("=== After ===");
 //
-//            Member resMem = em.find(Member.class, 101L);
+//            hellojpa.Member resMem = em.find(hellojpa.Member.class, 101L);
 //
 //            System.out.println("resMem.getId() = " + resMem.getId());
 //            System.out.println("resMem.getName() = " + resMem.getName());
 //             */
 //
 //            /* - First Level Cache
-//            Member mem = new Member();
+//            hellojpa.Member mem = new hellojpa.Member();
 //            mem.setId(101L);
 //            mem.setName("Hello-Hi");
 //
-//            Member resMem1 = em.find(Member.class, 101L);
-//            Member resMem2 = em.find(Member.class, 101L);
+//            hellojpa.Member resMem1 = em.find(hellojpa.Member.class, 101L);
+//            hellojpa.Member resMem2 = em.find(hellojpa.Member.class, 101L);
 //            */
 //
 //            /* - transactional write-behind
-//            Member mem1 = new Member(150L, "A");
-//            Member mem2 = new Member(160L, "B");
+//            hellojpa.Member mem1 = new hellojpa.Member(150L, "A");
+//            hellojpa.Member mem2 = new hellojpa.Member(160L, "B");
 //
 //            em.persist(mem1);
 //            em.persist(mem2);
 //             */
 //
 //            /* - Dirty Checking
-//            Member mem = em.find(Member.class, 150L);
+//            hellojpa.Member mem = em.find(hellojpa.Member.class, 150L);
 //            mem.setName("ZZZZZ");
 //             */
 //
 //            /* - Detach
-//            Member mem = em.find(Member.class, 150L);
+//            hellojpa.Member mem = em.find(hellojpa.Member.class, 150L);
 //            mem.setName("AAAAA");
 //
 //            em.detach(mem);
@@ -92,7 +92,7 @@
 //            // em.clear(); 영속성 컨텍스트 모두 detach
 //
 //            // PK generate strategy
-//            Member mem = new Member();
+//            hellojpa.Member mem = new hellojpa.Member();
 //            mem.setUsername("C");
 //
 //            em.persist(mem);
