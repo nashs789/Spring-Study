@@ -2,6 +2,9 @@
 //
 //import jakarta.persistence.*;
 //
+//import java.util.ArrayList;
+//import java.util.List;
+//
 //@Entity
 //public class Member {
 //
@@ -12,16 +15,19 @@
 //    @Column(name = "USERNAME")
 //    private String username;
 //
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "TEAM_ID")
-//    private Team team;
+//    @OneToOne
+//    @JoinColumn(name = "locker_id")
+//    private Locker locker;
 //
-//    public Team getTeam() {
-//        return team;
+//    @OneToMany(mappedBy = "member")
+//    private List<MemberProduct> memberProducts = new ArrayList<>();
+//
+//    public Locker getLocker() {
+//        return locker;
 //    }
 //
-//    public void setTeam(Team team) {
-//        this.team = team;
+//    public void setLocker(Locker locker) {
+//        this.locker = locker;
 //    }
 //
 //    public Long getId() {

@@ -16,27 +16,19 @@
 //        tx.begin();
 //
 //        try {
-//            // 저장
-//            Team team = new Team();
-//            team.setName("TeamA");
-//            em.persist(team);
+//            Movie movie = new Movie();
+//            movie.setDirector("A");
+//            movie.setActor("a");
+//            movie.setName("바람");
+//            movie.setPrice(10000);
 //
-//            Member mem = new Member();
-//            mem.setUsername("Member1");
-//            mem.setTeam(team);
-//            em.persist(mem);
-//
-//            // 영속성 컨텍스트 초기화
+//            em.persist(movie);
 //            em.flush();
 //            em.clear();
 //
-//            Member findMem = em.find(Member.class, mem.getId());
-//            // Team findTeam = em.find(Team.class, mem.getTeam().getId());
-//            List<Member> members = findMem.getTeam().getMembers();
+//            Movie findMovie = em.find(Movie.class, movie.getId());
 //
-//            for(Member member : members) {
-//                System.out.println("member = " + member.getUsername());
-//            }
+//            System.out.println(findMovie.getName());
 //
 //            tx.commit();
 //        } catch(Exception e) {
