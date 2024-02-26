@@ -61,5 +61,15 @@
     - Dto
   - @RestController = @Controller + @ResponseBody
 - HTTP 메시지 컨버터
+  - return String: StringHttpMessageConverter
+  - return 객체: MappingJackson2HttpMessageConverter
+  - return byte: ByteArrayHttpMessageConverter
+  - return 다른 타입 : HttpMessageConverter
 - 요청 매핑 핸들러 어뎁터 구조
+  - Converter 동작은 어디에서 할까? (ArgumentResolver, ReturnValueHandler 가 사용해서 파라미터를 생성한다.)
+    - RequestMappingHandlerAdapter 에서 동작한다.
+    - HandlerMethodArgumentResolver 를 호출하고, 파라미터의 값을 생성하고, 컨트롤러를 호출한다.
+      - HttpServlet, HttpEntity, Model, @RequestParam, @ModelAttribute, @RequestBody 파라미터를 유연하게 처리 가능
+      - 30 개 이상의 ArgumentResolver 를 제공한다.
+    - HandlerMethodReturnValueHandler 가 응답 값을 변환하고 처리한다. (ArgumentResolver 랑 역할을 동일함)
 - 정리
