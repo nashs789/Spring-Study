@@ -11,3 +11,9 @@
 ## 📑 수강 목록(JPA)
 - [자바 ORM 표준 JPA 프로그래밍 - 기본편](https://github.com/nashs789/spring-study/tree/main/spring-jpa-basic)
 </br>
+
+## 📑 개인 공부
+- [Redis](https://github.com/nashs789/Spring-Study/tree/main/spring-boot-redis)
+- [Socket]
+- [OAuth2]
+</br>
