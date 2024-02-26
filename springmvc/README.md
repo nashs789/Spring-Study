@@ -1,6 +1,6 @@
 ### 강의명: 스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술
 ### 출처: 인프런
-### 범위: 섹션6 ~ 섹션8
+### 범위: 섹션6 ~ 섹션7
 ### 강사: 김영한
 </br>
 
@@ -54,6 +54,12 @@
     - spring.thymeleaf.prefix=classpath:/templates/
     - spring.thymeleaf.suffix=.html
 - HTTP 응답 - HTTP API, 메시지 바디에 직접 입력
+  - 응답
+    - Writer
+    - ResponseEntity
+    - String
+    - Dto
+  - @RestController = @Controller + @ResponseBody
 - HTTP 메시지 컨버터
 - 요청 매핑 핸들러 어뎁터 구조
 - 정리
