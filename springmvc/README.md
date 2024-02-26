@@ -79,8 +79,20 @@
 - 상품 도메인 개발
 - 상품 서비스 HTML
 - 상품 목록 - 타임리프
+  - URL 링크 표현식: @{...}
+  - 리터럴 대체: |...|
+  - 반복 출력: th:each
+  - 변수 표현식: ${...}
+    - 모델에 포함된 값이나 타임리프 변수로 선언한
+  - th:text
+    - 내용의 값을 text 값으로 변경한다.
+  - URL 링크 표현식2
+    - ex1) th:href="@{/basic/items/{itemId}(itemId=${item.id})}" - 경로 변수 스타일
+    - ex2) th:href="@{/basic/items/{itemId}(itemId=${item.id}, query='test')}" - 쿼리 스트링 생성
+    - ex3) th:href="@{|/basic/items/${item.id}|}" - ex1 과 같은 경로 표현식
 - 상품 상세
 - 상품 등록 폼
+  - th:action: 값이 비어있다면 현재 url 을 그대로 사용
 - 상품 등록 처리 - @ModelAttribute
 - 상품 수정
 - PRG Post/Redirect/Get
