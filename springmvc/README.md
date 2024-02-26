@@ -47,6 +47,12 @@
     - 생략시 @ModelAttribute 가 default 값이고, 쿼리 스트링에 따라서 null, 0 값 등으로 초기화됨 
   - content-type 이 application/json 로 설정되어 있어야 JSON 요청에 해당하는 Converter 가 동 
 - 응답 - 정적 리소스, 뷰 템플릿
+  - 정적 리소스: 브라우저에 정적인 HTML, css 제공할 때
+    - /static, /public, /resources, /META-INF/resources 경로에 정적 리소스를 제공한다.
+  - 뷰 템플릿: 동적인 HTML을 제공할 때
+  - thymeleaf 사용할 때 기본 설(application.properties)
+    - spring.thymeleaf.prefix=classpath:/templates/
+    - spring.thymeleaf.suffix=.html
 - HTTP 응답 - HTTP API, 메시지 바디에 직접 입력
 - HTTP 메시지 컨버터
 - 요청 매핑 핸들러 어뎁터 구조
