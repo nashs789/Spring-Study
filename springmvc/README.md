@@ -79,10 +79,26 @@
 - 상품 도메인 개발
 - 상품 서비스 HTML
 - 상품 목록 - 타임리프
+  - URL 링크 표현식: @{...}
+  - 리터럴 대체: |...|
+  - 반복 출력: th:each
+  - 변수 표현식: ${...}
+    - 모델에 포함된 값이나 타임리프 변수로 선언한
+  - th:text
+    - 내용의 값을 text 값으로 변경한다.
+  - URL 링크 표현식2
+    - ex1) th:href="@{/basic/items/{itemId}(itemId=${item.id})}" - 경로 변수 스타일
+    - ex2) th:href="@{/basic/items/{itemId}(itemId=${item.id}, query='test')}" - 쿼리 스트링 생성
+    - ex3) th:href="@{|/basic/items/${item.id}|}" - ex1 과 같은 경로 표현식
 - 상품 상세
 - 상품 등록 폼
+  - th:action: 값이 비어있다면 현재 url 을 그대로 사용
 - 상품 등록 처리 - @ModelAttribute
 - 상품 수정
 - PRG Post/Redirect/Get
+  - Post 요청을 보내고 새로고침을 하면 마지막 요청된 Post 요청이 다시 가는 문제를 해결
+    1. redirect 를 통해서 Get 요청으로 새로운 페이지로 보낸다.
+    2. 새로고침시 마지막 요청인 Get 요청이 간다.
 - RedirectAttributes
+  - RedirectAttributes 객체를 사용하면 인코딩 문제까지 한 번에 해결 가능하다
 - 정리
