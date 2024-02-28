@@ -2,11 +2,10 @@ package hellojpa.jpabook.jpashop;
 
 import hellojpa.jpabook.jpashop.domain.Book;
 import hellojpa.jpabook.jpashop.domain.Item;
+import hellojpa.jpabook.jpashop.domain.Member;
 import hellojpa.jpabook.jpashop.domain.Order;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import hellojpa.jpabook.jpashop.domain.enums.OrderStatus;
+import jakarta.persistence.*;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -17,11 +16,22 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Book book = new Book();
-            book.setName("JPA");
-            book.setAuthor("abc");
 
-            em.persist(book);
+            Order order = new Order();
+
+            order.setStatus(OrderStatus.ORDER);
+
+            em.persist(order);
+            em.flush();
+            em.clear();
+
+            //Order order1 = em.find(Order.class, order.getId());
+            Order order1 = em.getReference(Order.class, order.getId());
+            PersistenceUnitUtil utils = emf.getPersistenceUnitUtil();
+
+            System.out.println(utils.isLoaded(order1));
+            System.out.println(order1.getStatus());
+            System.out.println(utils.isLoaded(order1));
 
             tx.commit();
         } catch(Exception e) {
