@@ -1,13 +1,12 @@
-package com.springsocket;
+package com.example.messagingstompwebsocket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringSocketApplication {
+public class MessagingStompWebsocketApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSocketApplication.class, args);
+		SpringApplication.run(MessagingStompWebsocketApplication.class, args);
 	}
-
 }
