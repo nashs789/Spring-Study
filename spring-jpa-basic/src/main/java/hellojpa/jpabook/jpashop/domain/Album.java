@@ -23,4 +23,6 @@ public class Album extends Item {
     public void setEtc(String etc) {
         this.etc = etc;
     }
+
+
 }
