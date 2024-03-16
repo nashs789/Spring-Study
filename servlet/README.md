@@ -156,7 +156,7 @@
       - HttpRequestHandlerAdapter
       - SimpleControllerHandlerAdapter
       - ....
-- 뷰 리좀버
+- 뷰 리졸버
   - properties 에 prefix, suffix 세팅
   - ViewResolver 우선순위
     - BeanNameViewResolver

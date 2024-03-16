@@ -1,10 +1,9 @@
 package hellojpa.jpabook.jpashop.domain;
 
 import hellojpa.jpabook.jpashop.domain.enums.DiliveryStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+
+import static jakarta.persistence.FetchType.*;
 
 @Entity
 public class Delivery extends BaseEntity{
@@ -12,7 +11,7 @@ public class Delivery extends BaseEntity{
     @Id @GeneratedValue
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery", fetch = LAZY)
     private Order order;
 
     private String city;
