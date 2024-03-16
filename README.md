@@ -14,6 +14,6 @@
 
 ## 📑 개인 공부
 - [Redis](https://github.com/nashs789/Spring-Study/tree/main/spring-boot-redis)
-- [Socket]
+- [Socket-STOMP](https://github.com/nashs789/Spring-Study/tree/main/spring-socket)
 - [OAuth2]
 </br>
