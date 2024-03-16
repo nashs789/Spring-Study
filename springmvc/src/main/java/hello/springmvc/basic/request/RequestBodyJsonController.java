@@ -67,6 +67,7 @@ public class RequestBodyJsonController {
     @PostMapping("/request-body-json-v5")
     public HelloData requestBodyJsonV5(@RequestBody HelloData helloData) {
         log.info("helloData = {}", helloData);
+
         return helloData;
     }
 }
