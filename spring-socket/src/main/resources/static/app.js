@@ -3,15 +3,14 @@ const stompClient = new StompJs.Client({
 });
 
 stompClient.onConnect = (frame) => {
-    console.log("call onConnect");
-
+    let subsUrl = '/topic/greetings/' + $("#room_no").val();
+    console.log(subsUrl);
     setConnected(true);
-    console.log('Connected: ' + frame);
 
-    stompClient.subscribe('/topic/greetings', (greeting) => {
-        let res = JSON.parse(greeting.body);
+    stompClient.subscribe(subsUrl, (greeting) => {
+        // let res = JSON.parse(greeting.body);
 
-        showGreeting(res.body);
+        showGreeting(greeting.body);
     });
 };
 
@@ -25,37 +24,35 @@ stompClient.onStompError = (frame) => {
 };
 
 function setConnected(connected) {
-    console.log("call setConnected");
-
     $("#connect").prop("disabled", connected);
     $("#disconnect").prop("disabled", !connected);
+
     if (connected) {
         $("#conversation").show();
-    }
-    else {
+    } else {
         $("#conversation").hide();
     }
+
     $("#greetings").html("");
 }
 
 function connect() {
-    console.log("call connect");
     stompClient.activate();
 }
 
 function disconnect() {
     stompClient.deactivate();
     setConnected(false);
-    console.log("Disconnected");
 }
 
-let myChatRoom = "/msg/hello"
+let myChatRoom = "/msg/chatting"
 
 function sendName() {
 
     let param = {
-          'user_name': $("#name").val()
+          'userName': $("#name").val()
         , 'content': $("#content").val()
+        , 'roomNo' : $("#room_no").val()
     }
 
     console.log("param = ", param);
