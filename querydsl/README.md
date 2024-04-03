@@ -26,6 +26,25 @@ Querydsl 쿼리를 생성해서 조회하는 간단한 테스트 진행
 - 인스턴스 생성해서 사용 vs 기본으로 생성된 인스턴스 사용
 
 ### 📌 검색 조건 쿼리
+강의에서 제공해준 기본적인 조건들
+
+```
+member.username.eq("member1")               // username = 'member1'
+member.username.ne("member1")               // username != 'member1'
+member.username.eq("member1").not()         // username != 'member1'
+member.username.isNotNull()                 // 이름이 is not null
+member.age.in(10, 20)                       // age in (10,20)
+member.age.notIn(10, 20)                    // age not in (10, 20)
+member.age.between(10,30)                   // between 10, 30
+member.age.goe(30)                          // age >= 30
+member.age.gt(30)                           // age > 30
+member.age.loe(30)                          // age <= 30
+member.age.lt(30)                           // age < 30
+member.username.like("member%")             // like 검색 
+member.username.contains("member")          // like ‘%member%’ 검색 
+member.username.startsWith("member")        // like ‘member%’ 검색
+```
+
 ### 📌 결과 조회
 ### 📌 정렬
 ### 📌 페이징
