@@ -46,6 +46,12 @@ member.username.startsWith("member")        // like ‘member%’ 검색
 ```
 
 ### 📌 결과 조회
+- fetch(): 전체 조회
+- fetchOne(): 단건 조회
+- fetchFirst(): 최초 한 건 조회
+- fetchResults(): 페이징 정보 포함 조회
+- fetchCount(): count() 조회
+
 ### 📌 정렬
 ### 📌 페이징
 ### 📌 집합
