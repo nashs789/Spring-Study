@@ -60,6 +60,14 @@ member.username.startsWith("member")        // like ‘member%’ 검색
     - .nullsFirst(): null 값이 처음으로
 
 ### 📌 페이징
+페이징 관련된 메소드 설명
+
+- offset()
+- limit()
+
+위 메소드 말고도, 위에서 사용한 fetchResults() 를 사용할 여건이 된다면 페이징 정보를
+얻어서 쿼리 만들어도 상관 없음
+
 ### 📌 집합
 ### 📌 조인 - 기본 조인
 ### 📌 조인 - on
