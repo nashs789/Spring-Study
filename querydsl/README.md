@@ -53,6 +53,12 @@ member.username.startsWith("member")        // like ‘member%’ 검색
 - fetchCount(): count() 조회
 
 ### 📌 정렬
+- orderBy()
+    - .desc(): 내림차순
+    - .asc(): 오름차순
+    - .nullsLast(): null 값이 마지막으로
+    - .nullsFirst(): null 값이 처음으로
+
 ### 📌 페이징
 ### 📌 집합
 ### 📌 조인 - 기본 조인
