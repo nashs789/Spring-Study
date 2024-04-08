@@ -109,4 +109,15 @@ from 절에서 서브 쿼리는 사용 불가능하다.
 3. native SQL 작성
 
 ### 📌 Case 문
+
+```
+Nothing Spectial
+```
+
 ### 📌 상수, 문자 더하기
+
+- Expressions 을 사용하면 상수를 사용할 수 있음 
+- java 는 타입이 있기 때문에 캐스팅이 필요
+  - stringValue() - line436
+
+## 👉 Section 3
