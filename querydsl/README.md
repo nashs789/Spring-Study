@@ -80,8 +80,33 @@ member.username.startsWith("member")        // like ‘member%’ 검색
 - having()
 
 ### 📌 조인 - 기본 조인
+
+- join()
+- leftJoin()
+- rightJoin()
+- 세타 조인 (연관관계가 없는 테이블)
+
 ### 📌 조인 - on
+
+```
+Nothing Spectial
+```
+
 ### 📌 조인 - 페치 조인
+
+DB 에서 제공하는 기능은 아니고, 연관된 데이터를 전부 가지고 오는 방법
+
+- fetchJoin()
+
 ### 📌 서브 쿼리
+
+JPAExpression 을 사용해서 만들 수 있다.
+from 절에서 서브 쿼리는 사용 불가능하다.
+  
+하지만!! from 절의 서브 쿼리는 대체가 가능한 부분임
+1. 서브쿼리로 변경
+2. 어플리케이션 레벨에서 쿼리를 분리
+3. native SQL 작성
+
 ### 📌 Case 문
 ### 📌 상수, 문자 더하기
