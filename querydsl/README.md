@@ -121,3 +121,34 @@ Nothing Spectial
   - stringValue() - line436
 
 ## 👉 Section 3
+
+### 📌 프로젝션과 결과 반환 - 기본
+프로젝션이 단건인 경우 해당 타입에 맞춰서 반환 받으면 되지만, 여러개의 타입이
+섞여 있는 경우에는 Tuple 타입으로 받는다.
+
+- Tuple.get(QClass.Column)
+
+단 Tuple 은 queryDsl 패키지기 때문에 Repository 에서 반환시에는 DTO 로 만들어서
+반환하는걸 권장한다.  
+  
+다른 레이어까지 가지고 가는건 좋지 않은것 같음
+
+### 📌 프로젝션과 결과 반환 - DTO 조회
+JPQL 의 경우 DTO 의 생성자가 필요하고, 패키지명까지 적어줘야 하는 번거러움과 보기 좋지 않음
+하지만 queryDsl 이 제공하는 방법은 깔끔
+
+- 프로퍼티 접근
+  - Projections.bean 를 통해서 접근
+- 필드 직접 접근
+  - Projections.fields 를 통해서 접근(필드 값에 맞춰서 값 세팅)
+- 생성자 사용
+  - 필드명이 달라도 타입만 같으면 문제 없이 동작함
+- 필드 접근시 필드명이 다른 DTO 케이스
+  - as 를 사용해서 별칭 가능
+  - ExpressionUtils.as() 도 가능 -> 이게 조금 가독성 구진듯
+
+### 📌 프로젝션과 결과 반환 - @QueryProjection
+### 📌 동적 쿼리 - BooleanBuilder 사용
+### 📌 동적 쿼리 - Where 다중 파라미터 사용
+### 📌 수정, 삭제 벌크 연산
+### 📌 SQL function 호출하기
