@@ -167,4 +167,31 @@ where 조건 내에서 메소드를 호출해서 해결하는 방법으로 where
 - Reusable
 
 ### 📌 수정, 삭제 벌크 연산
+JPA 는 dirty check 를 통해서 감지 후 건 바이 건으로 쿼리를 수행하기 때문에 벌크 연산은
+따로 수행되어야 하는데 벌크 연산 수행시 영속성 컨텍스트와 무관하게 실행되기 때문에 update 가 수행된다 해도
+영속성 컨텍스트는 그대로 값이 유지된다.
+  
+DB 에서 값을 다시 조회한다고 해도 영속성 컨텍스트에 데이터가 있다면 값을 그대로 유지하고 조회한 데이터를 무시하기
+때문에 문제가된다.
+
 ### 📌 SQL function 호출하기
+이건 코드를 봐야할 듯
+
+```java
+List<String> result = queryFactory.select(Expressions.stringTemplate(
+                                          "function('replace', {0}, {1}, {2})",
+                                          member.username, "member", "M"))
+                                          .from(member)
+                                          .fetch();
+```
+
+## 👉 Section 4
+
+### 📌 순수 JPA 리포지토리와 Querydsl
+
+
+### 📌 동적 쿼리와 성능 최적화 조회 - Builder 사용
+
+### 📌 동적 쿼리와 성능 최적화 조회 - Where절 파라미터 사용
+
+### 📌 조회 API 컨트롤러 개발

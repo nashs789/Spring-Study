@@ -617,4 +617,77 @@ public class QuerydslBasicTest {
     private BooleanExpression allEq(String usernameCond, Integer ageCond) {
         return usernameEq(usernameCond).and(ageEq(ageCond));
     }
+
+    @Test
+    public void bulkUpdate() {
+
+        // member1 = 10 -> 비회원으로 변경
+        // member2 = 20 -> 비회원으로 변경
+        // member3 = 30 -> 유지
+        // member4 = 40 -> 유지
+
+        long count = queryFactory.update(member)
+                                 .set(member.username, "비회원")
+                                 .where(member.age.lt(28))
+                                 .execute();
+
+        List<Member> result = queryFactory.selectFrom(member)
+                                          .fetch();
+
+        for(Member member1 : result) {
+            System.out.println("member1 = " + member1);
+        }
+
+        em.flush();
+        em.clear();
+
+        result = queryFactory.selectFrom(member)
+                .fetch();
+
+        for(Member member1 : result) {
+            System.out.println("member1 = " + member1);
+        }
+    }
+
+    @Test
+    public void bulkAdd() {
+        long count = queryFactory.update(member)
+                                 .set(member.age, member.age.add(1))
+                                 .execute();
+    }
+
+    @Test
+    public void bulkDelete() {
+        long count = queryFactory.delete(member)
+                                 .where(member.age.gt(18))
+                                 .execute();
+    }
+
+    @Test
+    public void sqlFunction() {
+        List<String> result = queryFactory.select(Expressions.stringTemplate(
+                                          "function('replace', {0}, {1}, {2})",
+                                          member.username, "member", "M"))
+                                          .from(member)
+                                          .fetch();
+
+        for (String s : result) {
+            System.out.println("s = " + s);
+        }
+    }
+
+    @Test
+    public void sqlFunction2() {
+        List<String> result = queryFactory.select(member.username)
+                                          .from(member)
+//                                          .where(member.username.eq(
+//                                                  Expressions.stringTemplate("function('lower', {0})", member.username))
+//                                          )
+                                          .where(member.username.eq(member.username.lower()))
+                                          .fetch();
+
+        for (String s : result) {
+            System.out.println("s = " + s);
+        }
+    }
 }
